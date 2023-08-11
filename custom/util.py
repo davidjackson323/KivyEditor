@@ -44,8 +44,8 @@ def mousePosition(self, *args):
     root_window = self.children[0].children[0]
     root_window.ids.mouse_box.pos = self.mouse_pos
     root_window.ids.mouse_box.text = str(self.mouse_pos)
-    print(Window.size, "SIZE")
-    print(Window.left, "LEFT")
+    #print(Window.size, "SIZE")
+    #print(Window.left, "LEFT")
     #print(Window.top, "TOP")
 
 def drag_and_drop(self, widget = None, *args):

@@ -4,38 +4,67 @@ MDFloatLayout:
     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     size: 1, 1
 
-
-
     MDFloatLayout:
         #md_bg_color: 0, 1, 0, 1
         size_hint: 0.55, 0.95
         pos_hint: {'right':0.75}
+        id: app_container
 
         AppView:
             id: view_port
-            #do_rotation: True
-            #do_scale: False
-            do_translation_x: True
-            #pos_hint_y: self.parent.pos_hint_y
 
     MDFloatLayout:
         size_hint: 0.55, 0.95
         pos_hint: {'right':0.75}
 
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.065, 'center_y':0.1}
+            md_bg_color: 0, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: '-15'
+            on_release: view_port.rotation -= 15
+
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.065*2.1, 'center_y':0.1}
+            md_bg_color: 0, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: '+15'
+            on_release: view_port.rotation += 15
+
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.1, 'center_y':0.05}
+            md_bg_color: 1, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: 'Touch Rotation Disabled'
+            on_release: view_port.allow_rotation(instance = self)
+
         MDIconButton:
             pos_hint: {'center_x':0.75, 'center_y':0.05}
+            icon: 'home-circle'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            on_release: view_port.reset_zoom()
+
+        MDIconButton:
+            pos_hint: {'center_x':0.65, 'center_y':0.05}
             icon: 'refresh-circle'
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            on_release: view_port.scale = int(1)
+            on_release: view_port.rotation = 0
+
+
         MDIconButton:
             pos_hint: {'center_x':0.85, 'center_y':0.05}
             icon: 'plus-circle'
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            on_release: view_port.scale = view_port.scale + 0.1
+            on_release: view_port.zoom_in()
 
         MDIconButton:
             pos_hint: {'center_x':0.95, 'center_y':0.05}
@@ -43,7 +72,9 @@ MDFloatLayout:
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            #on_release: view_port.scale = view_port.scale - 0.1; view_port.pos_hint = {'center_x':view_port.center_y +.10}
+            on_release: view_port.zoom_out()
+
+
 
 
     MDBoxLayout:
@@ -284,10 +315,6 @@ MDFloatLayout:
             size_hint_y: self.parent.size_hint_y/4
             pos_hint: {'top': 0.85, 'center_x': 0.5}
             color: 0, 0, 0, 1
-
-
-
-        
         
 
     MDLabel:

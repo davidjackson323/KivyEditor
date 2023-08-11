@@ -11,6 +11,8 @@ from kivy.clock import Clock
 from kivy.uix.button import Button
 from functools import partial
 
+import os
+os.environ["KIVY_NO_CONSOLELOG"] = "1"
 
 #from ctypes import windll
 #windll.user32.SetProcessDpiAwarenessContext(-4)
@@ -41,7 +43,7 @@ class KVEditor(MDApp):
         root = self.root.children[0]
         button = Button()
         #drag_and_drop(self, button)
-        #root.ids.view_port.grid_lines()
+        #oot.ids.view_port.grid_lines()
 
 
 if __name__ == '__main__':
