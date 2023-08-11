@@ -1,0 +1,308 @@
+
+MDFloatLayout:
+    md_bg_color: 0.05, 0.05, 0.05, 1
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    size: 1, 1
+
+
+
+    MDFloatLayout:
+        #md_bg_color: 0, 1, 0, 1
+        size_hint: 0.55, 0.95
+        pos_hint: {'right':0.75}
+
+        AppView:
+            id: view_port
+            #do_rotation: True
+            #do_scale: False
+            do_translation_x: True
+            #pos_hint_y: self.parent.pos_hint_y
+
+    MDFloatLayout:
+        size_hint: 0.55, 0.95
+        pos_hint: {'right':0.75}
+
+        MDIconButton:
+            pos_hint: {'center_x':0.75, 'center_y':0.05}
+            icon: 'refresh-circle'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            on_release: view_port.scale = int(1)
+        MDIconButton:
+            pos_hint: {'center_x':0.85, 'center_y':0.05}
+            icon: 'plus-circle'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            on_release: view_port.scale = view_port.scale + 0.1
+
+        MDIconButton:
+            pos_hint: {'center_x':0.95, 'center_y':0.05}
+            icon: 'minus-circle'
+            icon_size: '50dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            #on_release: view_port.scale = view_port.scale - 0.1; view_port.pos_hint = {'center_x':view_port.center_y +.10}
+
+
+    MDBoxLayout:
+        pos_hint: {'center_x': 0.5, 'top':1}
+        md_bg_color: 'black'
+        size_hint: 1, 0.05
+        orientation: 'horizontal'
+        #padding: '10dp'
+        #spacing: '10dp'
+
+        MDRectangleFlatButton:
+            text: 'File'
+            radius: [0]
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #size_hint: 1, 0.9
+
+            font_theme_color: 'Custom'
+            font_name: 'assets/fonts/racing'
+            text_color: 'white'
+            line_color: 0, 0, 0, 0
+            #font_size: '24dp'
+            #text_color: 'black'
+            
+        MDRectangleFlatButton:
+            text: 'Window'
+            radius: [0]
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            font_theme_color: 'Custom'
+            font_name: 'assets/fonts/racing'
+            text_color: 'white'
+            line_color: 0, 0, 0, 0
+
+
+        MDRectangleFlatButton:
+            text: 'About'
+            radius: [0]
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            font_theme_color: 'Custom'
+            font_name: 'assets/fonts/racing'
+            text_color: 'white'
+            line_color: 0, 0, 0, 0
+            #font_size: '20sp'
+
+        MDLabel:
+            text:'David Jackson - College of the Desert'
+            halign: 'right'
+            font_name: 'assets/fonts/racing'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+
+
+
+
+
+    MDScrollView:
+        pos: self.parent.pos
+        pos_hint: {'top':.95}
+        #height: self.parent.height
+        size_hint_y: 0.97
+        size_hint_x: None
+        width: self.parent.width / 5
+        bar_color: 1, 1, 1, 1
+        bar_inactive_color: 0, 0, 0, 1
+
+        bar_pos_y: 'left'
+
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+
+            Rectangle:
+                pos:self.pos
+                size: self.size
+
+
+
+        MDBoxLayout:
+            id: change_height
+            md_bg_color: 0.1, 0.1, 0.1  , 1
+            pos_hint: {'center_x': 0.5, 'top':0.5}
+            size_hint_y: None
+            height: self.parent.parent.height
+            height: '750dp'
+            orientation: 'vertical'
+            padding: '20dp'
+            spacing: '15dp'
+            orientation: 'vertical'
+
+
+
+            MDLabel:
+                text: 'Layouts'
+                halign: 'center'
+                font_size: '30sp'
+                font_name: 'assets/fonts/racing.ttf'
+                #background_color: 'black'
+                color: 'white'
+                size_hint_y: '50dp'
+
+
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Float'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Box'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Grid'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD ScrollView'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Recycle Grid'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Refresh'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Relative'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'MD Responsive'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDLabel:
+                size_hint_y: '50dp'
+                font_size: '30dp'
+                text: 'MD Buttons'
+                font_name: 'assets/fonts/racing.ttf'
+                color: 'white'
+                halign: 'center'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'Icon'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'Icon Button'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+            MDRectangleFlatButton:
+                size_hint_x: 0.9
+                text: 'Rectangle Flat Button'
+                pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                line_color: 'white'
+                text_color: 'white'
+                md_bg_color: 'black'
+
+
+
+
+    MDFloatLayout:
+        md_bg_color: 0.1, 0.1, 0.1  , 0.4
+        size_hint_x: 0.25
+        size_hint_y: 0.95
+        pos_hint: {'right': 1, 'top': 0.95}
+
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 1
+
+            Rectangle:
+                pos:self.pos
+                size: self.size
+
+
+
+        MDLabel:
+            text:'Widget Settings'
+            font_name: 'assets/fonts/racing.ttf'
+            pos: self.parent.pos
+            color: 'white'
+            halign: 'center'
+            pos_hint: {'top':1}
+            size_hint: 1, 0.15
+            font_size: '40dp'
+
+            canvas.before:
+                Color: 
+                    rgba: 0, 0, 0, 1
+
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        ColorWheel:
+            pos: self.parent.pos
+            size_hint_x: 2
+            size_hint_y: self.parent.size_hint_y/4
+            pos_hint: {'top': 0.85, 'center_x': 0.5}
+            color: 0, 0, 0, 1
+
+
+
+        
+        
+
+    MDLabel:
+        id: mouse_box
+        #theme_text_color: "Custom"
+        color: 1, 1, 1, 1
+        size_hint: 0.2, 0.025
+        #radius: ['10dp']
+        text: 'words'
+
+
+
+    
+
+        
+            
+
+
