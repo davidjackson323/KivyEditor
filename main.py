@@ -18,7 +18,7 @@ from functools import partial
 #print(lastError)
 
 print('hello world')
-windowSize(4)
+windowSize(5)
 Window.bind(on_motion = mousePosition)
 
 class KVEditor(MDApp):

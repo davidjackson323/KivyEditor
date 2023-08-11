@@ -22,8 +22,19 @@ def windowSize(monitors = 1):
 
     if monitors == 4: 
         Window.maximize()
-        #Window.left = 0
+        Window.size_hint_x: None
+        Window.size = (0.5, 100)
+        Window.left = Window.width
+        #Window.height = Window.height/2
         #Window.top = -793
+
+    if monitors == 5:
+        #Window.maximize()
+        #print(window.size)
+        Window.size = (1883, 1016)
+        Window.top = 31
+        Window.left = 2010
+
 
 def scrollsize(self):
     print(self)
