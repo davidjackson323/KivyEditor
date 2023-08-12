@@ -29,15 +29,14 @@ class AppView(ScatterLayout):
 
     def allow_rotation(self, instance, *args):
         if self.do_rotation == False:
-            
             self.do_rotation = True
             instance.md_bg_color = (0, 0, 0, 1)
             instance.text = "Touch Rotation Enabled"
 
         else: 
-            self.rotation = False
+            self.do_rotation = False
             instance.md_bg_color = (1, 0, 0, 1)
-            instance.text = "Touch Rotation Enabled"
+            instance.text = "Touch Rotation Disabled"
 
     def grid_lines(self, canvas=None, *args):
         #print('DRAWING GRID LINES')
