@@ -8,16 +8,13 @@ from custom.appview import AppView
 from kivy.clock import Clock
 
 
+
 from kivy.uix.button import Button
 from functools import partial
 
 import os
 os.environ["KIVY_NO_CONSOLELOG"] = "1"
 
-#from ctypes import windll
-#windll.user32.SetProcessDpiAwarenessContext(-4)
-#lastError = windll.kernel32.GetLastError()
-#print(lastError)
 
 print('hello world')
 windowSize(5)
@@ -25,14 +22,13 @@ Window.bind(on_motion = mousePosition)
 
 class KVEditor(MDApp):
     DEBUG = True
-    KV_DIRS = ["custom/"]
+    KV_DIRS = ["custom"]
     #KV_FILES = ["custom/appview.kv"]
     CLASSES = {"AppView": "custom.appview"}
+    AUTORELOADER_PATHS = [(os.getcwd(), {"recursive": True}),
+                          "custom"]
+
     def build_app(self, first=False):
-        #self.theme_cls.theme_style = "Dark"
-        KV_DIRS = ["custom/"]
-        #KV_FILES = ["custom/appview.kv"]
-        CLASSES = {"AppView": ".custom.appview.AppView"}
         Clock.schedule_once(self.set_page)
         button = Button()
         #Clock.schedule_interval(partial(drag_and_drop, self, button), 0.5)
@@ -43,7 +39,7 @@ class KVEditor(MDApp):
         root = self.root.children[0]
         button = Button()
         #drag_and_drop(self, button)
-        #oot.ids.view_port.grid_lines()
+        #root.ids.view_port.grid_lines()
 
 
 if __name__ == '__main__':

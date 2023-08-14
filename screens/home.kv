@@ -4,14 +4,11 @@ MDFloatLayout:
     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     size: 1, 1
 
-    MDFloatLayout:
-        #md_bg_color: 0, 1, 0, 1
-        size_hint: 0.55, 0.95
-        pos_hint: {'right':0.75}
-        id: app_container
 
-        AppView:
-            id: view_port
+    AppView:
+        id: view_port
+        x: add_content.width
+        starting_x: add_content.width
 
     MDFloatLayout:
         size_hint: 0.55, 0.95
@@ -77,6 +74,7 @@ MDFloatLayout:
 
 
 
+
     MDBoxLayout:
         pos_hint: {'center_x': 0.5, 'top':1}
         md_bg_color: 'black'
@@ -130,6 +128,7 @@ MDFloatLayout:
 
 
     MDScrollView:
+        id: add_content
         pos: self.parent.pos
         pos_hint: {'top':.95}
         #height: self.parent.height
@@ -153,7 +152,7 @@ MDFloatLayout:
 
         MDBoxLayout:
             id: change_height
-            md_bg_color: 0.1, 0.1, 0.1  , 1
+            md_bg_color: 0.1, 0.1, 0.1  , 0.1
             pos_hint: {'center_x': 0.5, 'top':0.5}
             size_hint_y: None
             height: self.parent.parent.height
@@ -378,12 +377,27 @@ MDFloatLayout:
                     size: self.size
 
         ColorWheel:
+            id: color_wheel
             pos: self.parent.pos
             size_hint_x: 2
             size_hint_y: self.parent.size_hint_y/4
             pos_hint: {'top': 0.85, 'center_x': 0.5}
-            color: 0, 0, 0, 1
+            color: 1, 1, 1, 1
+
+        MDRectangleFlatIconButton:
+            id: color_copy
+            theme_icon_color: 'Custom'
+            icon_color: color_wheel.color
+            icon_size: '20dp'
+            pos_hint: {'top':0.589, 'center_x':0.5}
+            size_hint_x: 0.35
+            icon: 'format-color-fill'
+            icon_size: '40dp'
+            text: 'Copy color code'
+            text_color: 'white'
+            line_color: "white"
         
+
 
     MDLabel:
         id: mouse_box
