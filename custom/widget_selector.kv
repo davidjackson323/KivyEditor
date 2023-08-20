@@ -1,0 +1,215 @@
+<WidgetSelector@MDScrollView>
+    id: add_content
+    pos: self.parent.pos
+    pos_hint: {'top':.95}
+    #height: self.parent.height
+    size_hint_y: 0.97
+    size_hint_x: None
+    width: '275dp'
+    size_hint_max_x: 0.1
+    bar_color: 0, 0, 1, 1
+    bar_inactive_color: 0, 0, 0, 1
+
+    bar_pos_y: 'left'
+
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 0.5
+
+        Rectangle:
+            pos:self.pos
+            size: self.size
+
+
+
+    MDBoxLayout:
+        id: change_height
+        md_bg_color: 0.1, 0.1, 0.1  , 0.1
+        pos_hint: {'center_x': 0.5, 'top':0.5}
+        size_hint_y: None
+        height: self.parent.parent.height
+        height: '1100dp'
+        orientation: 'vertical'
+        padding: '20dp'
+        spacing: '15dp'
+        orientation: 'vertical'
+
+
+
+        MDLabel:
+            text: 'Layouts'
+            halign: 'center'
+            font_size: '30sp'
+            font_name: 'assets/fonts/racing.ttf'
+            #background_color: 'black'
+            color: 'white'
+            size_hint_y: '50dp'
+
+
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Float'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Box'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Grid'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD ScrollView'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Recycle Grid'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Refresh'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Relative'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'MD Responsive'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDLabel:
+            size_hint_y: '50dp'
+            font_size: '30dp'
+            text: 'MD Buttons'
+            font_name: 'assets/fonts/racing.ttf'
+            color: 'white'
+            halign: 'center'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'Icon'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'Icon Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDRaisedButton:
+            size_hint_x: 0.9
+            text: 'Raised Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+
+        MDFlatButton:
+            size_hint_x: 0.9
+            text: "Flat Button"
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            theme_text_color: 'Custom'
+            text_color: 'white'
+            #line_color: 'white'
+            md_bg_color: 'black'
+
+        MDRectangleFlatButton:
+            size_hint_x: 0.9
+            text: 'Rectangle Flat Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            line_color: 'white'
+            text_color: 'white'
+
+        MDRectangleFlatIconButton:
+            size_hint_x: 0.9
+            text: 'Rectangle Flat Icon Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            #md_bg_color: 'black'
+            line_color: 'white'
+            icon: 'language-python'
+            icon_color: 'white'
+
+        MDRoundFlatButton:
+            size_hint_x: 0.9
+            text: 'Round Flat Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            #md_bg_color: 'black'
+            line_color: 'white'
+            icon_color: 'white'
+
+        MDRoundFlatIconButton:
+            size_hint_x: 0.9
+            text: 'Round Flat Icon Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            #md_bg_color: 'black'
+            line_color: 'white'
+            icon: 'language-python'
+            icon_color: 'white'
+        
+        MDFillRoundFlatButton:
+            size_hint_x: 0.9
+            text: 'Fill Round Flat Icon Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+            line_color: 'white'
+            icon_color: 'white'
+            
+        MDFillRoundFlatIconButton:
+            size_hint_x: 0.9
+            text: 'Fill Round Flat Icon Button'
+            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+            #line_color: 'white'
+            text_color: 'white'
+            md_bg_color: 'black'
+            line_color: 'white'
+            icon_color: 'white'
+            icon: 'language-python'
+
+        MDFlatButton:

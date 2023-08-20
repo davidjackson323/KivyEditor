@@ -40,6 +40,9 @@ def windowSize(monitors = 1):
 def scrollsize(self):
     print(self)
 
+def update_grid(self, *args):
+    print(self.children[0].children[0].ids)
+    
 
 def mousePosition(self, *args):
     #print('moved', self.mouse_pos)

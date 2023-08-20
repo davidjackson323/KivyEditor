@@ -16,7 +16,13 @@ class AppView(ScatterLayout):
         print('STARTING X IS', self.x)
         self.starting_x = self.x
         Clock.schedule_once(self.grid_lines, 1)
-        #self.grid_lines(canvas=self.canvas)
+        
+
+
+    def update_grid(self, *args):
+        self.canvas.clear()
+        self.grid_lines()
+        print('stuff')
 
     def allow_rotation(self, instance, *args):
         if self.do_rotation == False:
@@ -29,8 +35,9 @@ class AppView(ScatterLayout):
             instance.md_bg_color = (1, 0, 0, 1)
             instance.text = "Touch Rotation Disabled"
 
-    def grid_lines(self, canvas=None, *args):
+    def grid_lines(self, *args):
         
+
         draw_to = self.canvas
 
         height = self.height
@@ -48,7 +55,7 @@ class AppView(ScatterLayout):
 
 
 
-        desired_line_count = 15
+        desired_line_count = 30
 
         increment_x_by = actual_size_x/desired_line_count
         increment_y_by = actual_size_y/desired_line_count
@@ -56,10 +63,16 @@ class AppView(ScatterLayout):
         current_x = 0
         current_y = 0
 
-        color = Color(1, 1, 1, 1)
+        color = Color(0, 0, 1, 1)
         draw_to.add(color)
     
         counter = 0
+
+        blue_rect = Rectangle(pos=(0, 0), size = (actual_size_x, actual_size_y))
+        draw_to.add(blue_rect)
+
+        color = Color(1, 1, 1, 1)
+        draw_to.add(color)
 
         #Draw lines across x axis
         while counter <= desired_line_count:
@@ -80,6 +93,10 @@ class AppView(ScatterLayout):
             draw_to.add(line)
             current_y += increment_y_by
             counter += 1
+
+        self.size_hint = (None, None)
+        self.size = (actual_size_x, actual_size_y)
+
 
 
     def reset_rotation(self, *args):
