@@ -1,10 +1,11 @@
-<WidgetSettings>
+<WidgetSettings@RelativeLayout>
     id: root_layout
-    md_bg_color: 0, 0, 0, 0.5
+    #md_bg_color: 1, 0, 0, 0.5
     size_hint_x: None
     width: '275dp'
     size_hint_y: 0.95
     pos_hint: {'right': 1, 'top': 0.95}
+
 
     MDLabel:
         id: settings_label
@@ -17,7 +18,7 @@
         size_hint: 1, None
         height: '50dp'
         font_size: '30dp'
-        #md_bg_color: 1, 1, 1, 1
+        md_bg_color: 1, 1, 1, 1
 
     ColorWheel:
         id: color_wheel

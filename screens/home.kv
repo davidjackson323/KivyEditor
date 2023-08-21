@@ -4,11 +4,11 @@ MDFloatLayout:
     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     size: 1, 1
 
+    MDFloatLayout:
+        id: add_port
 
     AppView:
         id: view_port
-        x: add_content.width - 0.5
-        starting_x: add_content.width
 
     MDFloatLayout:
         size_hint: 0.55, 0.95
@@ -37,7 +37,7 @@ MDFloatLayout:
             md_bg_color: 1, 0, 0, 1
             text_color: 1, 1, 1, 1
             text: 'Touch Rotation Disabled'
-            on_release: view_port.allow_rotation(instance = self)
+            on_release: view_port.rotation_allowed()
 
         MDIconButton:
             pos_hint: {'center_x':0.75, 'center_y':0.05}
@@ -45,7 +45,7 @@ MDFloatLayout:
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            on_release: view_port.reset_zoom()
+            on_release: view_port.scale = 1; view_port.auto_center()
 
         MDIconButton:
             pos_hint: {'center_x':0.65, 'center_y':0.05}
@@ -62,7 +62,7 @@ MDFloatLayout:
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            on_release: view_port.zoom_in()
+            on_release: view_port.scale += 0.1
 
         MDIconButton:
             pos_hint: {'center_x':0.95, 'center_y':0.05}
@@ -70,13 +70,14 @@ MDFloatLayout:
             icon_size: '50dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            on_release: view_port.zoom_out()
+            on_release: view_port.scale -= 0.1
 
 
 
 
 
     MDBoxLayout:
+        id: menu_bar
         pos_hint: {'center_x': 0.5, 'top':1}
         md_bg_color: 'black'
         size_hint: 1, 0.05

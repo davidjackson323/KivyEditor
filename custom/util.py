@@ -51,7 +51,7 @@ def mousePosition(self, *args):
     root_window.ids.mouse_box.text = str(self.mouse_pos)
 
     #getting the view_port location, size and position, to check if we are in bounds
-    view_port = root_window.ids.view_port
+    #view_port = root_window.ids.view_port
 
     #for the bounds checking we need to make sure that we are checking
     #if the mouse location is with in the designated space for clicking
@@ -61,7 +61,7 @@ def mousePosition(self, *args):
     #We can use the scale to do set up the if statement. If scale bigger than 1
     #default to inside of designated space. 
 
-    print("COLLISION DETECTED", view_port.collide_point(self.mouse_pos[0], self.mouse_pos[1]))
+    #print("COLLISION DETECTED", view_port.collide_point(self.mouse_pos[0], self.mouse_pos[1]))
 
 
 

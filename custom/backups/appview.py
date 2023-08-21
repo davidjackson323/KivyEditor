@@ -1,5 +1,6 @@
 from kivy.lang import Builder
 from kivy.uix.scatterlayout import ScatterLayout
+from kivy.uix.scatter import Scatter
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.graphics import Rectangle, Line, Color
 from kivy.core.window import Window 
@@ -14,9 +15,20 @@ class AppView(ScatterLayout):
         super().__init__(*args, **kw)
         #print(self.canvas)
         print('STARTING X IS', self.x)
-        self.starting_x = self.x
-        Clock.schedule_once(self.grid_lines, 1)
+        #self.starting_x = self.x
+        #Clock.schedule_once(self.grid_lines, 1)
+
         
+
+    def set_size(self, *args):
+        print("setting 1:1", Window.size, self.size_hint)
+        screen_size = Window.size
+        screen_size_x = screen_size[0]
+        screen_size_y = screen_size[1]
+        #self.size_hint = (None, None)
+        self.size_hint = [0.2, 0.75]
+        self.apply_transform((100, 100))
+        print(self.size_hint)
 
 
     def update_grid(self, *args):
@@ -36,8 +48,6 @@ class AppView(ScatterLayout):
             instance.text = "Touch Rotation Disabled"
 
     def grid_lines(self, *args):
-        
-
         draw_to = self.canvas
 
         height = self.height
