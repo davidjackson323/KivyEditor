@@ -63,8 +63,8 @@ class AppView(ScatterLayout):
         root = self.get_root_window().children[0].children[0]
         center = Window.center
         menu_height = root.ids.menu_bar.height
-        self.pos = (center[0] - (self.size[0]/2),  
-                    center[1] - (self.size[1]/2 + menu_height/2) 
+        self.pos = (center[0] - (self.size[0]/2 * self.scale),  
+                    center[1] - ((self.size[1]/2 + menu_height/2)*self.scale) 
                     )        
         
     def draw_grid(self, *args):

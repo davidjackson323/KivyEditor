@@ -42,7 +42,7 @@ class KVEditor(MDApp):
         #pass
         #print(self.root.children[0].ids)
         root = self.root.children[0]
-        root.ids.view_port.set_size(width = 1920, height = 1080)
+        root.ids.view_port.set_size(width = 1080, height = 1920)
         
         root.ids.view_port.auto_center()
         root.ids.view_port.scale = 0.65
