@@ -3,9 +3,11 @@
     #pos_hint: {'right':0.75}
     #min_width: '100dp'
     md_bg_color: 1, 1, 1, 0.1
+    id: control_box
 
 
     MDFloatLayout:
+        id: rotation_controls
         #md_bg_color: 0, 1, 0, 1
         size_hint_x: None
         width: '380dp'
@@ -39,7 +41,8 @@
 
 
     MDRelativeLayout:
-        pos_hint: {'center_x': 0.365, 'center_y':0.5}
+        pos_hint: {'center_y':0.5}
+        pos: '350dp', 0
         md_bg_color: 1, 1, 1, 0.1
         size_hint_x: None
         width: '200dp'
@@ -84,10 +87,11 @@
 
 
     MDRelativeLayout:
-        pos_hint: {'center_x': 0.75, 'center_y':0.5}
+        pos_hint: {'center_y':0.5}
         md_bg_color: 1, 1, 1, 0.1
         size_hint_x: None
         width: '200dp'
+        pos: control_box.width - 393, 0
 
         MDTextField:
             size_hint_x: None

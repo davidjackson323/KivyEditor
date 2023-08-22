@@ -23,15 +23,17 @@ print('hello world')
 #windowSize(5)
 #auto_size()
 
-Window.minimum_width = 1500
+Window.minimum_width = 1493
 Window.minimum_height = 500
 
-Window.maximize()
-print("WINDOW WIDTH IS", Window.width)
-if Window.width > 799:
-    Window.restore()
-    Window.size = (1883, 1016)
-    Window.left = 2010
+# Window.maximize()
+# print("WINDOW WIDTH IS", Window.width)
+# if Window.width > 799:
+#Window.restore()
+Window.size = (1883, 1016)
+Window.left = 2010
+
+#Window.maximize()
 
 #Window.bind(on_motion = mousePosition)
 
