@@ -1,20 +1,27 @@
 <AppView>
     md_bg_color: 1, 1, 1, 1
     size_hint: None, None
-    size: 100, 500
+    #size: 100, 500
     do_rotation: False
     auto_bring_to_front: False
 
     #pos_hint: {'center_x': 0.5, 'center_y':0.5}
 
     canvas.before:
-        
         Color: 
             rgba: 0, 0, 1, 1
 
         Rectangle:
             size: self.size
-            #pos: self.pos
+
+    MDFloatLayout:
+        md_bg_color: 0, 1, 0, 1
+        size_hint_x: 0.5
+        pos_hint: {'center_x':0.5}
+        Button:
+            text: 'words'
+            size_hint: 0.1, 0.1
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
 
 
 

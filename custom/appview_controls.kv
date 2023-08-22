@@ -1,0 +1,172 @@
+<AppViewControls>
+    size_hint: 0.55, 0.95
+    #pos_hint: {'right':0.75}
+    #min_width: '100dp'
+    md_bg_color: 1, 1, 1, 0.1
+
+
+    MDFloatLayout:
+        #md_bg_color: 0, 1, 0, 1
+        size_hint_x: None
+        width: '380dp'
+        pos_hint_x: None
+        x: -12.5
+
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.15, 'center_y':0.5}
+            md_bg_color: 0, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: '-15'
+            #on_release: view_port.rotation -= 15
+
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            md_bg_color: 1, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: 'Touch Rotation Disabled'
+            #on_release: view_port.rotation_allowed()
+
+
+        MDFillRoundFlatButton:
+            id: allow_rotate
+            pos_hint: {'center_x':0.85, 'center_y':0.5}
+            md_bg_color: 0, 0, 0, 1
+            text_color: 1, 1, 1, 1
+            text: '+15'
+            #on_release: view_port.rotation += 15
+
+
+    MDRelativeLayout:
+        pos_hint: {'center_x': 0.365, 'center_y':0.5}
+        md_bg_color: 1, 1, 1, 0.1
+        size_hint_x: None
+        width: '200dp'
+
+        MDTextField:
+            size_hint_x: None
+            # size_hint_y: 0.8
+            width: '80dp'
+            pos_hint: {'center_y':0.5}
+            pos_hint_x: None
+            pos: 5, 0
+            hint_text: ' Width'
+            theme_text_color: 'Custom'
+            text_color: 'white'
+            mode: 'round'
+            halign: 'center'
+            line_color_focus: 'red'
+            text_color_focus: 'red'
+            text_color_normal: 'black'
+
+
+        MDIcon:
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            icon: 'close'
+            font_size: '40dp'
+            theme_text_color: 'Custom'
+            text_color: 'white'
+
+
+        MDTextField:
+            size_hint_x: None
+            # size_hint_y: 0.8
+            width: '80dp'
+            pos_hint: {'center_y':0.5, 'right':0.98}
+            hint_text: ' Height'
+            mode: 'round'
+            halign: 'center'
+            line_color_focus: 'red'
+            text_color_focus: 'red'
+            text_color_normal: 'black'
+
+
+
+    MDRelativeLayout:
+        pos_hint: {'center_x': 0.75, 'center_y':0.5}
+        md_bg_color: 1, 1, 1, 0.1
+        size_hint_x: None
+        width: '200dp'
+
+        MDTextField:
+            size_hint_x: None
+            # size_hint_y: 0.8
+            width: '80dp'
+            pos_hint: {'center_y':0.5}
+            pos_hint_x: None
+            pos: 5, 0
+            hint_text: 'Scale: 1'
+            theme_text_color: 'Custom'
+            text_color: 'white'
+            mode: 'round'
+            halign: 'center'
+            line_color_focus: 'red'
+            text_color_focus: 'red'
+            text_color_normal: 'black'
+
+
+        MDIcon:
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            icon: 'close'
+            font_size: '40dp'
+            theme_text_color: 'Custom'
+            text_color: 'white'
+
+
+        MDTextField:
+            size_hint_x: None
+            # size_hint_y: 0.8
+            width: '80dp'
+            pos_hint: {'center_y':0.5, 'right':0.98}
+            hint_text: 'Step: 0.1'
+            mode: 'round'
+            halign: 'center'
+            line_color_focus: 'red'
+            text_color_focus: 'red'
+            text_color_normal: 'black'
+
+
+    MDRelativeLayout:
+        pos_hint: {'right':1, 'center_y':0.5}
+        #md_bg_color: 0, 0, 0, 1
+        size_hint_x: None
+        width: '192.5dp'
+
+        MDIconButton:
+            pos_hint: {'center_y':0.5}
+            pos: -12.5, 0
+            icon: 'home-circle'
+            icon_size: '37.5dp'
+            font_theme_color: 'Custom'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            #on_release: view_port.scale = 1; view_port.auto_center()
+
+        MDIconButton:
+            pos_hint: {'center_y':0.5}
+            pos: 35, 0
+            icon: 'refresh-circle'
+            icon_size: '37.5dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            #on_release: view_port.rotation = 0; view_port.auto_center()
+
+
+        MDIconButton:
+            pos_hint: {'center_y':0.5}
+            pos: 82.5, 0
+            icon: 'plus-circle'
+            icon_size: '37.5dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            #on_release: view_port.scale += 0.1
+
+        MDIconButton:
+            pos_hint: {'center_y':0.5}
+            pos: 130, 0
+            icon: 'minus-circle'
+            icon_size: '37.5dp'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            #on_release: view_port.scale -= 0.1

@@ -20,8 +20,8 @@ os.environ["KIVY_NO_CONSOLELOG"] = "1"
 class AppView(ScatterLayout):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        Clock.schedule_once(self.set_size)
-        Clock.schedule_once(self.draw_grid)
+        #Clock.schedule_once(self.set_size)
+        #Clock.schedule_once(self.draw_grid)
 
 
     def set_size(self, *args,  height = None, width = None):
@@ -37,7 +37,7 @@ class AppView(ScatterLayout):
             self.size = size
             #self.scale = scale
             self.auto_center()
-
+            
             
         else:
             print('setting custom size')
@@ -68,7 +68,7 @@ class AppView(ScatterLayout):
                     )        
         
     def draw_grid(self, *args):
-        print(self.canvas)
+        print(self.parent.canvas)
         draw_to = self.canvas
         draw_to.clear()
 
@@ -77,12 +77,15 @@ class AppView(ScatterLayout):
         
         print('size is ', width, height)
 
+        # color = Color(0, 0, 1, 1)
+        # draw_to.before.add(color)
+
+        # rectangle = Rectangle(pos = (0, 0), size = self.size)
+        # draw_to.before.add(rectangle)
+
+
         color = Color(1, 1, 1, 1)
         draw_to.add(color)
-
-        line = Line(points = (0, 0, width, 0), close = True, width =1)
-        draw_to.add(line)
-
 
         desired_line_count = 30
 
@@ -98,7 +101,7 @@ class AppView(ScatterLayout):
             line = Line(points=(current_x, current_y, current_x, current_y + height),
                         close = True,
                         width = 1)
-            draw_to.add(line)
+            draw_to.before.add(line)
             current_x += increment_x_by
             counter += 1
 
@@ -109,6 +112,6 @@ class AppView(ScatterLayout):
             line = Line(points=(current_x, current_y, current_x + width, current_y)
                         ,close = True,
                         width = 1)
-            draw_to.add(line)
+            draw_to.before.add(line)
             current_y += increment_y_by
             counter += 1

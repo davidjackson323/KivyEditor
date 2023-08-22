@@ -1,6 +1,7 @@
 from kivy.core.window import Window
 
 def windowSize(monitors = 1):
+    print('TESTER', Window.system_size)
     if monitors == 1:
         print('setting window size')
         Window.size = (1920/1.1, 1080/1.1)
@@ -36,6 +37,18 @@ def windowSize(monitors = 1):
         Window.top = 31
         Window.left = 2010
 
+def auto_size():
+    Window.maximize()
+    print('waiting', Window.width)
+    width = Window.width
+    #Window.restore()
+    if width > 799:
+        Window.restore()
+        print("TESTING SIZE ACTIVATION")
+        #Window.
+        Window.size = (1883, 1016)
+        #Window.top = 31
+        Window.left = -100000
 
 def scrollsize(self):
     print(self)
