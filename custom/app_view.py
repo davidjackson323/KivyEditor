@@ -22,6 +22,7 @@ class AppView(ScatterLayout):
         super().__init__(*args, **kwargs)
         #Clock.schedule_once(self.set_size)
         #Clock.schedule_once(self.draw_grid)
+        Window.bind(on_resize = self.auto_center)
 
 
     def set_size(self, *args,  height = None, width = None):

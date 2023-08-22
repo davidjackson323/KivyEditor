@@ -1,4 +1,6 @@
 
+import os
+os.environ["KIVY_NO_CONSOLELOG"] = "1"
 from kivymd.tools.hotreload.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.label import Label
@@ -15,8 +17,6 @@ from kivy.uix.button import Button
 from functools import partial
 
 
-import os
-os.environ["KIVY_NO_CONSOLELOG"] = "1"
 
 
 print('hello world')
@@ -26,13 +26,8 @@ print('hello world')
 Window.minimum_width = 1493
 Window.minimum_height = 500
 
-# Window.maximize()
-# print("WINDOW WIDTH IS", Window.width)
-# if Window.width > 799:
-#Window.restore()
 Window.size = (1883, 1016)
 Window.left = 2010
-
 #Window.maximize()
 
 #Window.bind(on_motion = mousePosition)

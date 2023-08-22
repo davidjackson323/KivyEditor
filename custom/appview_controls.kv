@@ -15,29 +15,26 @@
         x: -12.5
 
         MDFillRoundFlatButton:
-            id: allow_rotate
             pos_hint: {'center_x':0.15, 'center_y':0.5}
             md_bg_color: 0, 0, 0, 1
             text_color: 1, 1, 1, 1
             text: '-15'
-            #on_release: view_port.rotation -= 15
+            on_release: root.rotate_app(degrees = 15)
 
         MDFillRoundFlatButton:
-            id: allow_rotate
             pos_hint: {'center_x':0.5, 'center_y':0.5}
-            md_bg_color: 1, 0, 0, 1
+            md_bg_color: 0.05, 0.05, 0.05, 1
             text_color: 1, 1, 1, 1
             text: 'Touch Rotation Disabled'
-            #on_release: view_port.rotation_allowed()
+            on_release: root.rotate_allowed(instance = self)
 
 
         MDFillRoundFlatButton:
-            id: allow_rotate
             pos_hint: {'center_x':0.85, 'center_y':0.5}
             md_bg_color: 0, 0, 0, 1
             text_color: 1, 1, 1, 1
             text: '+15'
-            #on_release: view_port.rotation += 15
+            on_release: root.rotate_app(degrees = -15)
 
 
     MDRelativeLayout:
@@ -48,6 +45,7 @@
         width: '200dp'
 
         MDTextField:
+            id: app_width
             size_hint_x: None
             # size_hint_y: 0.8
             width: '80dp'
@@ -62,6 +60,7 @@
             line_color_focus: 'red'
             text_color_focus: 'red'
             text_color_normal: 'black'
+            on_text_validate: root.set_app_size()
 
 
         MDIcon:
@@ -73,6 +72,7 @@
 
 
         MDTextField:
+            id: app_height
             size_hint_x: None
             # size_hint_y: 0.8
             width: '80dp'
@@ -83,6 +83,7 @@
             line_color_focus: 'red'
             text_color_focus: 'red'
             text_color_normal: 'black'
+            on_text_validate: root.set_app_size()
 
 
 
@@ -94,13 +95,14 @@
         pos: control_box.width - 393, 0
 
         MDTextField:
+            id: app_scale
             size_hint_x: None
             # size_hint_y: 0.8
             width: '80dp'
             pos_hint: {'center_y':0.5}
             pos_hint_x: None
             pos: 5, 0
-            hint_text: 'Scale: 1'
+            hint_text: 'Scale: %'
             theme_text_color: 'Custom'
             text_color: 'white'
             mode: 'round'
@@ -108,6 +110,7 @@
             line_color_focus: 'red'
             text_color_focus: 'red'
             text_color_normal: 'black'
+            on_text_validate: root.set_scale_size(instance=self)
 
 
         MDIcon:
@@ -119,17 +122,18 @@
 
 
         MDTextField:
+            id: scale_step
             size_hint_x: None
             # size_hint_y: 0.8
             width: '80dp'
             pos_hint: {'center_y':0.5, 'right':0.98}
-            hint_text: 'Step: 0.1'
+            hint_text: ' Step: %'
             mode: 'round'
             halign: 'center'
             line_color_focus: 'red'
             text_color_focus: 'red'
             text_color_normal: 'black'
-
+            on_text_validate: root.set_scale_step(instance = self)
 
 
     MDRelativeLayout:
@@ -146,7 +150,7 @@
             font_theme_color: 'Custom'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            #on_release: view_port.scale = 1; view_port.auto_center()
+            on_release: root.center_app()
 
         MDIconButton:
             pos_hint: {'center_y':0.5}
@@ -155,7 +159,7 @@
             icon_size: '37.5dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            #on_release: view_port.rotation = 0; view_port.auto_center()
+            on_release: root.reset_rotation()
 
 
         MDIconButton:
@@ -165,7 +169,7 @@
             icon_size: '37.5dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            #on_release: view_port.scale += 0.1
+            on_release: root.zoom_in()
 
         MDIconButton:
             pos_hint: {'center_y':0.5}
@@ -174,4 +178,4 @@
             icon_size: '37.5dp'
             theme_icon_color: 'Custom'
             icon_color: 'white'
-            #on_release: view_port.scale -= 0.1
+            on_release: root.zoom_out()
