@@ -1,47 +1,27 @@
-<WidgetSettings@RelativeLayout>
+<WidgetSettings>
     id: root_layout
-    md_bg_color: 1, 0, 0, 0.5
+    #md_bg_color: 0, 0, 0, 0.5
     size_hint_x: None
     width: '275dp'
     size_hint_y: 0.95
     pos_hint: {'right': 1, 'top': 0.95}
 
 
-    MDLabel:
-        id: settings_label
-        text:'Widget Settings'
-        font_name: 'assets/fonts/racing.ttf'
-        pos: self.parent.pos
-        color: 'white'
-        halign: 'center'
-        pos_hint: {'top':1}
-        size_hint: 1, None
-        height: '50dp'
-        font_size: '30dp'
-        md_bg_color: 1, 1, 1, 1
+    MDRelativeLayout:
+        md_bg_color: 0, 0, 0, 0.5
 
-    ColorWheel:
-        id: color_wheel
-        pos: self.parent.pos
-        size_hint_x: 2
-        #size_hint_y: self.parent.size_hint_y/4
-        size_hint_y: None
-        height: '250dp'
-        pos_hint_y: None
-        #pos: 0, 965-300
-        pos_hint: {'center_x': 0.5, 'top':0.95}
-        color: 1, 1, 1, 1
+        MDLabel:
+            id: settings_label
+            text:'Widget Settings'
+            font_name: 'assets/fonts/racing.ttf'
+            #pos: self.parent.pos
+            color: 'white'
+            halign: 'center'
+            pos_hint: {'top':1}
+            size_hint: 1, None
+            height: '50dp'
+            font_size: '30dp'
+            #md_bg_color: 1, 1, 1, 1
 
-    MDRectangleFlatIconButton:
-        id: color_copy
-        theme_icon_color: 'Custom'
-        icon_color: color_wheel.color
-        icon_size: '20dp'
-        pos_hint: {'top':0.69, 'center_x':0.5}
-        size_hint_x: 0.35
-        icon: 'format-color-fill'
-        icon_size: '30dp'
-        text: 'Copy color code'
-        text_color: 'white'
-        line_color: "white"
-        md_bg_color: 'black'
+        ColorSelector:
+

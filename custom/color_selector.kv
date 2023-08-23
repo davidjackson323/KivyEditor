@@ -1,0 +1,125 @@
+<ColorSelector>
+    size_hint_y: None
+    height: '120dp'
+    md_bg_color: 1, 1, 1, 0.1
+    pos_hint_y: None
+    pos: 0, self.parent.height - (self.height + 50)
+    #pos: 0, self.parent.height - (.settings_label.height + self.height)
+
+    MDRelativeLayout:
+        id: color_box
+
+        MDGridLayout:
+            rows: 4
+            cols: 2
+            row_force_default: True
+            row_default_height: 30
+            #adaptive_height: True
+
+            MDTextFieldRect:
+                text: str(int(red_slider.value))
+                halign: 'center'
+                valign: 'center'
+                background_color: 1, 1, 1, 1
+                size_hint_y: 1.5
+                multiline: False
+                on_text_validate: root.update_slider_position(instance = self, slider = 'red')
+
+
+
+            MDSlider:
+                id: red_slider
+                min: 0
+                max: 255
+                color: 'red'
+                hint_text_color: "white"
+                hint_bg_color: "red"
+                thumb_color_active: 'red'
+                thumb_color_inactive: "red"
+                track_color_inactive: 'black'
+                #on_active: print(self.value)
+                size_hint_x: 4
+
+            MDTextFieldRect:
+                text: str(int(green_slider.value))
+                halign: 'center'
+                valign: 'center'
+                background_color: 1, 1, 1, 1
+                size_hint_y: 1.5
+                multiline: False
+                on_text_validate: root.update_slider_position(instance = self, slider = 'green')
+
+            MDSlider:
+                id: green_slider
+                min: 0
+                max: 255
+                color: 'green'
+                hint_text_color: "white"
+                hint_bg_color: "green"
+                thumb_color_active: 'green'
+                thumb_color_inactive: "green"
+                track_color_inactive: 'black'
+                on_active: print(self.value)
+                size_hint_x: 4
+
+            MDTextFieldRect:
+                text: str(int(blue_slider.value))
+                halign: 'center'
+                valign: 'center'
+                background_color: 1, 1, 1, 1
+                size_hint_y: 1.5
+                multiline: False
+                on_text_validate: root.update_slider_position(instance = self, slider = 'blue')
+            MDSlider:
+                id: blue_slider
+                min: 0
+                max: 255
+                color: 'blue'
+                hint_text_color: "white"
+                hint_bg_color: "blue"
+                thumb_color_active: 'blue'
+                thumb_color_inactive: "blue"
+                track_color_inactive: 'black'
+                on_active: print(self.value)
+                size_hint_x: 4
+
+
+            MDTextFieldRect:
+                text: str(int(alpha_slider.value))
+                halign: 'center'
+                line_color_normal: "red"
+                text_color_normal: "red"
+                text_color_focus: 'red'
+                helper_text_color_focus: "red"
+                multiline: False
+                on_text_validate: root.update_slider_position(instance = self, slider = 'alpha')
+           
+            MDSlider:
+                id: alpha_slider
+                value: 255
+                min: 0
+                max: 255
+                color: 'white'
+                hint_text_color: "white"
+                hint_bg_color: "grey"
+                thumb_color_active: 'white'
+                thumb_color_inactive: "white"
+                track_color_inactive: 'black'
+                on_active: print(self.value)
+                size_hint_x: 4
+
+    MDRectangleFlatButton:
+        id: copy_color
+        text: 'copy color'    
+        theme_text_color: 'Custom'
+
+        font_size: '15dp'
+        font_name: 'assets/fonts/racing'
+        #text_color: 'grey'
+        text_color: 0.5, 0.5, 0.5, 1
+        md_bg_color: 1, 1, 1, 1
+        size_hint_x: 1
+        pos_hint_y: None
+        pos: 0, -37
+        on_release: root.copy_color_to()
+        line_color: 'white'

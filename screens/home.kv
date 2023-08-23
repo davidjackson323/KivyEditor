@@ -4,78 +4,30 @@ MDFloatLayout:
     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     size: 1, 1
 
+    # WidgetSettings:
+    #     id: widget_settings
+
+
+
     MDFloatLayout:
         id: add_port
-
+        
     AppView:
         id: view_port
 
-    # MDFloatLayout:
+    # MDGridLayout:
     #     size_hint: 0.55, 0.95
     #     pos_hint: {'right':0.75}
     #     min_width: '100dp'
+    #     md_bg_color: 1, 0, 0, 1
+        
+    #     Button:
+    #     Button:
+
+
 
     AppViewControls:
         id: appview_controls
-        # MDFillRoundFlatButton:
-        #     id: allow_rotate
-        #     pos_hint: {'center_x':0.065, 'center_y':0.1}
-        #     md_bg_color: 0, 0, 0, 1
-        #     text_color: 1, 1, 1, 1
-        #     text: '-15'
-        #     on_release: view_port.rotation -= 15
-
-        # MDFillRoundFlatButton:
-        #     id: allow_rotate
-        #     pos_hint: {'center_x':0.065*2.1, 'center_y':0.1}
-        #     md_bg_color: 0, 0, 0, 1
-        #     text_color: 1, 1, 1, 1
-        #     text: '+15'
-        #     on_release: view_port.rotation += 15
-
-        # MDFillRoundFlatButton:
-        #     id: allow_rotate
-        #     pos_hint: {'center_x':0.1, 'center_y':0.05}
-        #     md_bg_color: 1, 0, 0, 1
-        #     text_color: 1, 1, 1, 1
-        #     text: 'Touch Rotation Disabled'
-        #     on_release: view_port.rotation_allowed()
-
-        # MDIconButton:
-        #     pos_hint: {'center_x':0.75, 'center_y':0.05}
-        #     icon: 'home-circle'
-        #     icon_size: '50dp'
-        #     theme_icon_color: 'Custom'
-        #     icon_color: 'white'
-        #     on_release: view_port.scale = 1; view_port.auto_center()
-
-        # MDIconButton:
-        #     pos_hint: {'center_x':0.65, 'center_y':0.05}
-        #     icon: 'refresh-circle'
-        #     icon_size: '50dp'
-        #     theme_icon_color: 'Custom'
-        #     icon_color: 'white'
-        #     on_release: view_port.rotation = 0; view_port.auto_center()
-
-
-        # MDIconButton:
-        #     pos_hint: {'center_x':0.85, 'center_y':0.05}
-        #     icon: 'plus-circle'
-        #     icon_size: '50dp'
-        #     theme_icon_color: 'Custom'
-        #     icon_color: 'white'
-        #     on_release: view_port.scale += 0.1
-
-        # MDIconButton:
-        #     pos_hint: {'center_x':0.95, 'center_y':0.05}
-        #     icon: 'minus-circle'
-        #     icon_size: '50dp'
-        #     theme_icon_color: 'Custom'
-        #     icon_color: 'white'
-        #     on_release: view_port.scale -= 0.1
-
-
-
 
 
     MDBoxLayout:
@@ -127,16 +79,12 @@ MDFloatLayout:
             theme_text_color: 'Custom'
             text_color: 1, 1, 1, 1
 
-
-
     WidgetSelector:
         id: widget_selector
 
     WidgetSettings:
         id: widget_settings
         
-
-
 
     MDLabel:
         id: mouse_box

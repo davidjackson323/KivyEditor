@@ -1,6 +1,7 @@
 
 import os
-os.environ["KIVY_NO_CONSOLELOG"] = "1"
+os.environ["KIVY_CONSOLELOG"] = "1"
+
 from kivymd.tools.hotreload.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.label import Label
@@ -15,6 +16,7 @@ from custom.appview_controls import AppViewControls
 from kivy.clock import Clock
 from kivy.uix.button import Button
 from functools import partial
+from custom.color_selector import ColorSelector
 
 
 
@@ -57,11 +59,6 @@ class KVEditor(MDApp):
         root.ids.view_port.scale = 0.65
         #root.ids.view_port.draw_grid()
 
-        button = Button()
-        button.pos_hint = {'center_x':0.5, 'center_y':0.5}
-        button.size_hint = 1, 1
-        #button.bind(on_release = print('hello'))
-        #root.ids.view_port.add_widget(button)
 
     def add_buttons(self, *args):
         root = self.root.children[0]
