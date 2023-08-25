@@ -16,6 +16,10 @@ Thanks for checking out the application. Development will be happening steadily 
 
 ![Screenshot from 2023-08-25 10-06-41](https://github.com/davidjackson323/KivyEditor/assets/19483270/0da6c880-58a0-4d74-a5bf-0ee5e22f5a71)
 
+https://youtu.be/TBQq0OQxd-8
+
+
+
 
 https://github.com/davidjackson323/KivyEditor/assets/19483270/bf9cae57-b9bb-4819-be8b-ff7c0e820398
 
