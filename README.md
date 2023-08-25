@@ -13,11 +13,11 @@ While not complete, I decided to make this public in the hopes that it might ben
 
 Thanks for checking out the application. Development will be happening steadily as I balance coding with my educational pursuits, so stay tuned for progress. 
 
-![image](https://github.com/davidjackson323/KivyEditor/assets/19483270/4e2f393a-ccb9-4ad1-a50d-9db878e865da)
+
+![Screenshot from 2023-08-25 10-06-41](https://github.com/davidjackson323/KivyEditor/assets/19483270/0da6c880-58a0-4d74-a5bf-0ee5e22f5a71)
 
 
-https://github.com/davidjackson323/KivyEditor/assets/19483270/17bae210-6e90-4857-8129-aa9bcbf87d2d
-
+https://github.com/davidjackson323/KivyEditor/assets/19483270/bf9cae57-b9bb-4819-be8b-ff7c0e820398
 
 
 TODO:  
