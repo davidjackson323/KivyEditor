@@ -13,5 +13,7 @@ class WidgetSelector(ScrollView):
         super().__init__(**kwargs)
 
     
-
+    # def print_attributes(self, *args):
+    #     test_layout = MDFloatLayout()
+        
     
