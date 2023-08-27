@@ -56,13 +56,28 @@ class ColorSelector(MDRelativeLayout):
         root = root.children[0].children[0]
         app_view = root.ids.view_port
         draw_to = app_view.canvas
-        draw_to.clear()
-        print(red, green, blue, alpha)
-        
+        print(draw_to.before.children)
+
+
+        for x in draw_to.before.children:
+            if 'Color' in str(x):
+                draw_to.before.remove(x)
+
+            if 'Rectangle' in str(x):
+                draw_to.before.remove(x)
+                print(x)
+
+
         color = Color(color_code[0], color_code[1], color_code[2], color_code[3])
         draw_to.before.add(color)
-
         rectangle = Rectangle(pos = (0, 0), size = app_view.size)
+
+        def printer(self, *args):
+            print('change')
+            rectangle.size = app_view.size
+
+        app_view.bind(size = printer)
+        
         draw_to.before.add(rectangle)
 
 

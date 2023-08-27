@@ -56,7 +56,6 @@ def scrollsize(self):
 def update_grid(self, *args):
     print(self.children[0].children[0].ids)
     
-
 def mousePosition(self, *args):
     #print('moved', self.mouse_pos)
     root_window = self.children[0].children[0]
