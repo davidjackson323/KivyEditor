@@ -16,6 +16,8 @@ Thanks for checking out the application. Development will be happening steadily 
 
 ![Screenshot from 2023-08-25 10-06-41](https://github.com/davidjackson323/KivyEditor/assets/19483270/0da6c880-58a0-4d74-a5bf-0ee5e22f5a71)
 
+![Kivy Demo](https://github.com/davidjackson323/KivyEditor/assets/19483270/8212ee60-28b1-49ba-996d-0358972e0a14)
+
 https://youtu.be/TBQq0OQxd-8
 
 
